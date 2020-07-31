@@ -21,7 +21,7 @@
             </div>
             <div class="card">
                 <table class="mx-auto my-4">
-
+                    <div id="customerForm" class="mx-auto">
                         <tr>
                             <td>Product name:</td>
                             <td><input class="form-group" type="name" name="pname" required><br></td>
@@ -42,16 +42,14 @@
                             <td>Wage:</td>
                             <td><input class="form-group" type="number" name="wage" required><br></td>
                         </tr>
-
+                    </div>
                         <tr>
                             <td></td>
                             <td class="text-center"> <a id="anchor" href="index.html" class="nav-link" onclick="addMore(event)">+Add More</a></td>
                         </tr>
-
                 </table>
-                <div id="customerForm">
-                            
-                </div>
+
+
             </div>
             <div class="header">
                 <div class="card">
