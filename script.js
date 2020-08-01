@@ -12,10 +12,7 @@ addMore = e => {
         <td>Weight(gm):</td>
         <td><input class="form-group" type="number" step="0.0001" name="weight[`+i+`]" required><br></td>
     </tr>
-    <tr>
-        <td>Rate:</td>
-        <td><input class="form-group" type="number" name="rate[`+i+`]" required><br></td>
-    </tr>
+
     <tr>
         <td>Jarti:</td>
         <td><input class="form-group" type="number" max="100" name="jarti[`+i+`]" required><br></td>
@@ -24,8 +21,12 @@ addMore = e => {
         <td>Wage:</td>
         <td><input class="form-group" type="number" name="wage[`+i+`]" required><br></td>
     </tr>
+    <tr>
+        <td></td>
+        <td>Percentage:<input type="radio" name="jyalaType[`+i+`]" value="1" checked> Value:<input type="radio" name="jyalaType[`+i+`]" value="2"><br></td>
+    </tr>
     </table>`;
     
-    customerform.insertAdjacentHTML = ("afterend",addCustomerForm);
+    customerform.insertAdjacentHTML("afterend",addCustomerForm);
     i = i+1;
 }

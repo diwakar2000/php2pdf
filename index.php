@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Billing System</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="text-light">
+    <div class="container">
+        <h1 class="header-title display-2 text-center text-white bg-success mt-4 mb-0 py-4 font-weight-bold font-italic">Mahalaxmi Jwellers</h1>
+    </div>
     <form action="topdf.php" method="post">
         <div class="container h-100 w-100">
             <div class="header">
-                <div class="card">
+                <div class="card bg-secondary">
                     <table class="mx-auto">
                         <tr>
                             <td><h4>Customer name:</h4></td>
@@ -19,40 +23,46 @@
                     </table>
                 </div>
             </div>
-            <div class="card">
+            <div class="card bg-secondary">
                 <table class="mx-auto my-4">
                     <div id="customerForm" class="mx-auto">
                         <tr>
-                            <td>Product name:</td>
-                            <td><input class="form-group" type="name" name="pname" required><br></td>
+                            <td class="d-flex align-self-center">Product name:</td>
+                            <td><input class="form-group" type="name" name="pname[0]" required><br></td>
                         </tr>
                         <tr>
-                            <td>Weight(gm):</td>
-                            <td><input class="form-group" type="number" step="0.0001" name="weight" required><br></td>
+                            <td class="d-flex align-self-center">Weight(gm):</td>
+                            <td><input class="form-group" type="number" step="0.0001" name="weight[0]" required><br></td>
                         </tr>
                         <tr>
-                            <td>Rate:</td>
+                            <td class="d-flex align-self-center">Rate:</td>
                             <td><input class="form-group" type="number" name="rate" required><br></td>
                         </tr>
                         <tr>
-                            <td>Jarti:</td>
-                            <td><input class="form-group" type="number" max="100" name="jarti" required><br></td>
+                            <td class="d-flex align-self-center">Jarti:</td>
+                            <td><input class="form-group" type="number" max="100" name="jarti[0]" required><br></td>
+                        </tr>
+
+                        <tr>
+                            <td class="d-flex align-self-center">Wage:</td>
+                            <td><input class="form-group" type="number" name="wage[0]" required><br></td>
                         </tr>
                         <tr>
-                            <td>Wage:</td>
-                            <td><input class="form-group" type="number" name="wage" required><br></td>
+                            <td></td>
+                            <td>Percentage:<input type="radio" name="jyalaType[0]" value="1" checked>   Value:<input type="radio" name="jyalaType[0]" value="2"><br></td>
                         </tr>
+                        
                     </div>
                         <tr>
                             <td></td>
-                            <td class="text-center"> <a id="anchor" href="index.html" class="nav-link" onclick="addMore(event)">+Add More</a></td>
+                            <td class="text-center"> <a id="anchor" href="index.html" class="nav-link text-light" onclick="addMore(event)">+Add More</a></td>
                         </tr>
                 </table>
 
 
             </div>
             <div class="header">
-                <div class="card">
+                <div class="card bg-secondary">
                     <table class="mx-auto">
                         <tr>
                             <td><input class="btn btn-primary m-2 py-2 px-3" type="submit" value="Submit"></td>
