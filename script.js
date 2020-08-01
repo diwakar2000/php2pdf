@@ -1,5 +1,15 @@
-var customerform = document.getElementById("customerForm");
+const customerform = document.getElementById("customerForm");
+const guaranteeBill = document.getElementById("guaranteeBill");
+const cashBill = document.getElementById("cashBill");
+const billType = document.getElementById("billType");
+const formAction = document.getElementById("form");
+const formElement1 = document.getElementById("formElement1");
+const formElement2 = document.getElementById("formElement2");
+const formElement3 = document.getElementById("formElement3");
+const formElement4 = document.getElementById("formElement4");
+const formElement5 = document.getElementById("formElement5");
 let i = 1;
+
 addMore = e => {
     e.preventDefault();
 
@@ -15,11 +25,11 @@ addMore = e => {
 
     <tr>
         <td>Jarti:</td>
-        <td><input class="form-group" type="number" max="100" name="jarti[`+i+`]" required><br></td>
+        <td><input class="form-group" type="number" name="jarti[`+i+`]"><br></td>
     </tr>
     <tr>
         <td>Wage:</td>
-        <td><input class="form-group" type="number" name="wage[`+i+`]" required><br></td>
+        <td><input class="form-group" type="number" name="wage[`+i+`]" ><br></td>
     </tr>
     <tr>
         <td></td>
@@ -29,4 +39,25 @@ addMore = e => {
     
     customerform.insertAdjacentHTML("afterend",addCustomerForm);
     i = i+1;
+}
+
+
+guarantee = e =>{
+    billType.innerText = "Guarantee Bill";
+    formAction.setAttribute("action","guaranteeBill.php");
+    formElement1.setAttribute("required","required");
+    formElement2.setAttribute("required","required");
+    formElement3.setAttribute("required","required");
+    formElement4.setAttribute("required","required");
+    formElement5.setAttribute("required","required");
+}
+
+cash = e =>{
+    billType.innerText = "Cash Bill";
+    formAction.setAttribute("action","cashBill.php");
+    formElement1.removeAttribute("required");
+    formElement2.removeAttribute("required");
+    formElement3.removeAttribute("required");
+    formElement4.removeAttribute("required");
+    formElement5.removeAttribute("required");
 }

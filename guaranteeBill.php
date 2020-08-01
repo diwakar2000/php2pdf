@@ -3,6 +3,8 @@
 require_once __DIR__.'/vendor/autoload.php';
 $cname = $_POST['cname'];
 $pname = $_POST['pname'];
+$address = $_POST['address'];
+$phone = $_POST['phone'];
 $weight = $_POST['weight'];
 $rate = $_POST['rate'];
 $wage = $_POST['wage'];
@@ -18,11 +20,11 @@ $formValues = 0;
 for($i=0;$i<$count;$i++){
     $nrate[$i] = $rate/11.664 * $weight[$i];
     if($jyalatype[$i]==1){
-        $total[$i] = round($nrate[$i] + $nrate[$i] * $jarti[$i] / 100 + $nrate[$i] * $wage[$i] / 100, 2);
+        $total[$i] = round($nrate[$i] + ($nrate[$i] * $jarti[$i] / 100) + ($nrate[$i] * $wage[$i] / 100), 2);
         $prejyala[$i] = "%";
     }
     else{
-        $total[$i] = round($nrate[$i] + $nrate[$i] * $jarti[$i] / 100 + $wage[i], 2);
+        $total[$i] = round($nrate[$i] + ($nrate[$i] * $jarti[$i] / 100) + $wage[$i], 2);
         $prejyala[$i] = "Rs.";
     }
 }
@@ -68,7 +70,7 @@ $html = '
 <div style="float: right;">Date: '.date("Y/m/d").'</div><br>
 <hr>
 <div style="margin-left:3em">
-    Name: '.$cname.' <div class="name"></div>    Address: <div class="address"></div>     Phone: <div class="phone"></div>
+    Name: '.$cname.' <div class="name"></div>    Address: '.$address.'<div class="address"></div>     Phone: '.$phone.'<div class="phone"></div>
 </div>
 <table style="width:90%; border:1px solid black; margin:auto; border-collapse:collapse;">
     <caption style="caption-side: top; text-align: center;"><h2>Original Bill</h2></caption>

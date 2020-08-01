@@ -11,14 +11,36 @@
     <div class="container">
         <h1 class="header-title display-2 text-center text-white bg-success mt-4 mb-0 py-4 font-weight-bold font-italic">Mahalaxmi Jwellers</h1>
     </div>
-    <form action="topdf.php" method="post">
+    <form id="form" method="post">
         <div class="container h-100 w-100">
             <div class="header">
-                <div class="card bg-secondary">
-                    <table class="mx-auto">
+                <div class="card bg-secondary pb-2">
+                    <table class="mx-auto pb-2">
                         <tr>
                             <td><h4>Customer name:</h4></td>
                             <td><input class="form-group py-2 mt-1" type="name" name="cname" required></td>
+                        </tr>
+                        <tr>
+                            <td><h4>Address:</h4></td>
+                            <td><input class="form-group py-2 mt-1" type="name" name="address" required></td>
+                        </tr>
+                        <tr>
+                            <td><h4>Phone:</h4></td>
+                            <td><input class="form-group py-2 mt-1" type="name" name="phone" required></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button id="billType" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">
+                                        Select Bill Type<span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a id="guaranteeBill" href="#" onclick="guarantee(event)">Guarantee Bill</a></li>
+                                        <li><a id="cashBill" href="#" onclick="cash(event)">Cash Bill</a></li>
+                                    </ul>
+                                </div>
+                            </td>
                         </tr>
                     </table>
                 </div>
@@ -28,24 +50,25 @@
                     <div id="customerForm" class="mx-auto">
                         <tr>
                             <td class="d-flex align-self-center">Product name:</td>
-                            <td><input class="form-group" type="name" name="pname[0]" required><br></td>
+                            <td><input id="formElement1" class="form-elements form-group" type="name" name="pname[0]" required="required"><br></td>
                         </tr>
                         <tr>
                             <td class="d-flex align-self-center">Weight(gm):</td>
-                            <td><input class="form-group" type="number" step="0.0001" name="weight[0]" required><br></td>
-                        </tr>
-                        <tr>
-                            <td class="d-flex align-self-center">Rate:</td>
-                            <td><input class="form-group" type="number" name="rate" required><br></td>
+                            <td><input id="formElement2" class="form-elements form-group" type="number" step="0.0001" name="weight[0]" required><br></td>
                         </tr>
                         <tr>
                             <td class="d-flex align-self-center">Jarti:</td>
-                            <td><input class="form-group" type="number" max="100" name="jarti[0]" required><br></td>
+                            <td><input id="formElement4" class="form-elements form-group" type="number" name="jarti[0]" required><br></td>
                         </tr>
+                        <tr>
+                            <td class="d-flex align-self-center">Rate:</td>
+                            <td><input id="formElement3" class="form-elements form-group" type="number" name="rate" required><br></td>
+                        </tr>
+
 
                         <tr>
                             <td class="d-flex align-self-center">Wage:</td>
-                            <td><input class="form-group" type="number" name="wage[0]" required><br></td>
+                            <td><input id="formElement5" class="form-elements form-group" type="number" name="wage[0]" required><br></td>
                         </tr>
                         <tr>
                             <td></td>
