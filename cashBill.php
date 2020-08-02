@@ -11,8 +11,18 @@ $jarti = $_POST['jarti'];
 
 $count = count($pname);
 
-$gtotal=0;
-$formData=0;
+$gtotal = 0;
+$formData = 0;
+$bill_no = 0;
+
+$f = fopen("billno.txt","r");
+$bill_no = (int)fgets($f);
+fclose($f);
+
+$f = fopen("billno.txt","w");
+$data = $bill_no +1;
+fwrite($f,$data);
+fclose($f);
 
 for($i=0;$i<$count;$i++){
     $gtotal = $gtotal + $jarti[$i];
@@ -31,6 +41,7 @@ for($i=0; $i<$count;$i++){
 
 $html = '
     <div class="bill" style="margin-left: 40em; margin-right: 40em;padding: 10px; background-color:#FEE6CD;">
+        <div style="float: right;">Bill No.:'.$bill_no.'</div><br>
         <div style="float: right;">Date:'.date("Y/m/d").'</div><br>
         <div style="text-align: center;background-color: #F4600C; margin-left:5em; margin-right:5em; border: 1px solid #F4600C; border-radius: 10px;">
             <h1 style="text-align: center; font-size: 50px;">Cash Bill</h1>

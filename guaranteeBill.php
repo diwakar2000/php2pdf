@@ -15,6 +15,16 @@ $count = count($pname);
 
 $gtotal = 0;
 $formValues = 0;
+$bill_no = 0;
+
+$f = fopen("billno.txt","r");
+$bill_no = (int)fgets($f);
+fclose($f);
+
+$f = fopen("billno.txt","w");
+$data = $bill_no +1;
+fwrite($f,$data);
+fclose($f);
 
 
 for($i=0;$i<$count;$i++){
@@ -60,6 +70,7 @@ $html = '
 
 <div class="bill" style="margin-left: 30em; margin-right: 30em;padding: 10px; background-color:#FEE6CD;">
 <div style="float: right;">Mo. 9842069154</div><br>
+<div style="float: right;">Bill No.'.$bill_no.'</div><br>
 <div style="text-align: center;background-color: #F4600C; margin-left:7em; margin-right:7em; border: 1px solid #F4600C; border-radius: 10px;">
     <h1 style="text-align: center;">Mahalaxmi Jewellers</h1>
     <h3 style="text-align: center;">Miklajung-7, Madhumalla, Morang</h3>
